@@ -26,15 +26,15 @@ fi
 (
         TIME=$(date +'%H:%M %d.%m')
         # Get values from system 
-	PERCENT=$(sudo cat /sys/firmware/beepberry/battery_percent )
-	VOLTAGE=$(sudo cat /sys/firmware/beepberry/battery_volts )
+	PERCENT=$(sudo cat /sys/firmware/beepy/battery_percent )
+	VOLTAGE=$(sudo cat /sys/firmware/beepy/battery_volts )
         RAWARRAY=()
         # Read multiple values from raw so we can discard the first and average the rest 
         # Iterate over the array and calc the average in RAW
         RAWFIRST=$(sudo cat /sys/firmware/beepberry/battery_raw )
         for i in {1..5}; 
         do 
-          RAW=$(sudo cat /sys/firmware/beepberry/battery_raw ) 
+          RAW=$(sudo cat /sys/firmware/beepy/battery_raw ) 
           RAWARRAY+=($RAW)
         done
         for RAW in ${RAWARRAY[@]}; do
