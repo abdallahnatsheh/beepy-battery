@@ -31,7 +31,7 @@ fi
         RAWARRAY=()
         # Read multiple values from raw so we can discard the first and average the rest 
         # Iterate over the array and calc the average in RAW
-        RAWFIRST=$(sudo cat /sys/firmware/beepberry/battery_raw )
+        RAWFIRST=$(sudo cat /sys/firmware/beepy/battery_raw )
         for i in {1..5}; 
         do 
           RAW=$(sudo cat /sys/firmware/beepy/battery_raw ) 
